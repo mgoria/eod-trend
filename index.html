@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Historical trend of end of day stock prices</title>
+
+    <script src="./vendor/papaparse.min.js"></script>
+
+    <style>
+        .controls {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .controls label {
+            padding-left: 10px;
+        }
+
+        .spinner {
+            text-align: center;
+            padding-bottom: 20px
+        }
+
+        .chart {
+            min-width: 310px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="controls">
+        <select id="companiesSelect"></select>
+
+        <label for="fromDate">From Date</label>
+        <input type="text" id="fromDate" name="fromDate">
+
+        <label for="toDate">To Date</label>
+        <input type="text" id="toDate" name="toDate">
+    </section>
+
+    <section class="spinner">
+        <span id="loadingSpinner"> Loading ... </span>
+    </section>
+
+    <section>
+        <div id="eodTrendChart" class="chart"></div>
+    </section>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css" type="text/css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.min.js"></script>
+
+    <script src="./dist/bundle.js"></script>
+</body>
+</html>
